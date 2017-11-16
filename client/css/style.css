@@ -12,6 +12,9 @@ SCSS Kit by Zreast
 .op_10 {
   opacity: 0.1; }
 
+.op_30 {
+  opacity: 0.3; }
+
 .op_50 {
   opacity: 0.5; }
 
@@ -133,7 +136,7 @@ p {
   line-height: 2rem; }
 
 .button-collapse {
-  color: #ffb74d; }
+  color: #009688; }
 
 .parallax-container {
   min-height: 380px;

@@ -10,23 +10,85 @@ html(lang='en')
 		include directives/nav_inject.jade
 		
 		br
-		form(ng-controller='MyCtrl as up', name='up.upload_form')
-			| Single Image with validations
-			input(type='file', ngf-select='', ng-model='up.file', name='file', ngf-pattern="'image/*'", accept='image/*', ngf-max-size='20MB')
-			|             Image thumbnail:
-			img(style='width:100px;', ng-show='!!up.file', ngf-thumbnail="up.file || '/thumb.jpg'")
-			i(ng-show='up.upload_form.file.$error.required') *required
-			br
-			i(ng-show='up.upload_form.file.$error.maxSize')
-				| File too large
-				| {{up.file.size / 1000000|number:1}}MB: max 20M
-			//
-				Multiple files
-				<div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
-				Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div>
-			button(type='submit', ng-click='up.submit()') submit
-			p {{up.progress}}
-	script(type='text/javascript', src='node_modules/angular/angular.min.js')
-	script(type='text/javascript', src='node_modules/ng-file-upload/dist/ng-file-upload.min.js')
-	script(type='text/javascript', src='node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js')
-	script(type='text/javascript', src='main.js')
+		#index-banner.parallax-container
+			.section.no-pad-bot
+				.container
+					br
+					br
+					p &nbsp;
+					p &nbsp;
+					h3.header.center.cyan-text.text-darken-2 Keep Your File Always Secure
+					.row.center
+						h5.header.col.s12.light.black-text.font_prompt เดอะเบส
+					br
+					br
+			.parallax.op_30
+				img(src='assets/img/hackerman.jpg', alt='')
+		.container
+			.section
+				.row
+					.col.s12.center
+						h3
+							i.mdi-content-send.brown-text
+						h4 Upload File
+						
+						form(ng-controller='MyCtrl as up', name='up.upload_form')
+							| Single Image with validations
+							input(type='file', ngf-select='', ng-model='up.file', name='file', ngf-pattern="'image/*'", accept='image/*', ngf-max-size='20MB')
+							|             Image thumbnail:
+							img(style='width:100px;', ng-show='!!up.file', ngf-thumbnail="up.file || '/thumb.jpg'")
+							i(ng-show='up.upload_form.file.$error.required') *required
+							br
+							i(ng-show='up.upload_form.file.$error.maxSize')
+								| File too large
+								| {{up.file.size / 1000000|number:1}}MB: max 20M
+							//
+								Multiple files
+								<div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+								Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div>
+							button(type='submit', ng-click='up.submit()') submit
+							p {{up.progress}}
+							
+		.parallax-container.valign-wrapper
+			.section.no-pad-bot
+				.container
+					.row.center
+						h5.header.col.s12.light.black-text.font_prompt ทุกความลับ, เราช่วยเหลือ, คุณดูแล
+			.parallax.op_30
+				img(src='assets/img/hackerman2.jpg', alt='')
+				
+		.container
+			.section
+				// Icon Section
+				.row.font_prompt
+					.col.s12.m4
+						.icon-block
+							h2.center.teal-text
+								i.material-icons lock
+							h5.center เข้ารหัสการอัปโหลด
+							p.light
+								| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum id sem quis mattis. Pellentesque eu ante et diam pulvinar elementum vel vel purus. Donec at efficitur purus. Etiam dictum
+					.col.s12.m4
+						.icon-block
+							h2.center.teal-text
+								i.material-icons favorite
+							h5.center ใช้งานง่าย
+							p.light
+								| Mauris at metus et est elementum pulvinar sit amet at massa. Quisque non nulla imperdiet, vulputate lorem eget, condimentum
+					.col.s12.m4
+						.icon-block
+							h2.center.teal-text
+								i.material-icons verified_user
+							h5.center ปลอดภัยเชื่อถือได้
+							p.light
+								| Vivamus rhoncus, ligula vel blandit sodales, arcu sapien viverra est, in accumsan ex odio finibus augue. Aliquam vel leo neque. Morbi sed finibus felis.
+		
+		.parallax-container.valign-wrapper
+			.section.no-pad-bot
+				.container
+					.row.center
+						h5.header.col.s12.light.black-text.font_prompt เงินเป็นของรัฐ แต่ชีวิตเป็นของคุณ
+			.parallax.op_30
+				img(src='assets/img/hackerman3.jpg', alt='')
+				
+		include directives/footer.jade

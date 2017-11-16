@@ -13,40 +13,139 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </head>
   <body ng-app="fileUpload">
     <nav class="white pos_fix" role="navigation">
       <div class="nav-wrapper container font_prompt"><a class="brand-logo hide_500" id="logo-container" href="index.html">DaBest Secure File Storage</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#"><i class="material-icons right">exit_to_app</i>เข้าสู่ระบบ</a></li>
+          <li><a href="#"><i class="material-icons right">exit_to_app</i>Log In</a></li>
         </ul>
         <ul class="side-nav" id="nav-mobile">
           <li>&nbsp;</li>
           <li class="grey lighten-5"><a href="#"><i class="material-icons left">home</i>
-              <div class="font_1dot4">หน้าแรก</div></a></li>
+              <div class="font_1dot4">Home</div></a></li>
           <li class="grey lighten-5"><a href="#"><i class="material-icons left">exit_to_app</i>
-              <div class="font_1dot4">เข้าสู่ระบบ</div></a></li>
+              <div class="font_1dot4">Log In</div></a></li>
         </ul><a class="button-collapse" href="#" data-activates="nav-mobile"><i class="material-icons">menu</i></a>
       </div>
     </nav>
     <nav class="white" role="navigation">
       <div class="nav-wrapper container"></div>
     </nav><br>
-    <form ng-controller="MyCtrl as up" name="up.upload_form">Single Image with validations
-      <input type="file" ngf-select="" ng-model="up.file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB">            Image thumbnail:<img style="width:100px;" ng-show="!!up.file" ngf-thumbnail="up.file || '/thumb.jpg'"><i ng-show="up.upload_form.file.$error.required">*required</i><br><i ng-show="up.upload_form.file.$error.maxSize">
-        File too large
-        {{up.file.size / 1000000|number:1}}MB: max 20M</i>
-      <!--
-      Multiple files
-      <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
-      Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div>
-      -->
-      <button type="submit" ng-click="up.submit()">submit</button>
-      <p>{{up.progress}}</p>
-    </form>
+    <div class="parallax-container" id="index-banner">
+      <div class="section no-pad-bot">
+        <div class="container"><br><br>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <h3 class="header center cyan-text text-darken-2">Keep Your File Always Secure</h3>
+          <div class="row center">
+            <h5 class="header col s12 light black-text font_prompt">เดอะเบส</h5>
+          </div><br><br>
+        </div>
+      </div>
+      <div class="parallax op_30"><img src="assets/img/hackerman.jpg" alt=""></div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4>Upload File</h4>
+            <form ng-controller="MyCtrl as up" name="up.upload_form">Single Image with validations
+              <input type="file" ngf-select="" ng-model="up.file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB">            Image thumbnail:<img style="width:100px;" ng-show="!!up.file" ngf-thumbnail="up.file || '/thumb.jpg'"><i ng-show="up.upload_form.file.$error.required">*required</i><br><i ng-show="up.upload_form.file.$error.maxSize">
+                File too large
+                {{up.file.size / 1000000|number:1}}MB: max 20M</i>
+              <!--
+              Multiple files
+              <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+              Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div>
+              -->
+              <button type="submit" ng-click="up.submit()">submit</button>
+              <p>{{up.progress}}</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h5 class="header col s12 light black-text font_prompt">ทุกความลับ, เราช่วยเหลือ, คุณดูแล</h5>
+          </div>
+        </div>
+      </div>
+      <div class="parallax op_30"><img src="assets/img/hackerman2.jpg" alt=""></div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <!-- Icon Section-->
+        <div class="row font_prompt">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center teal-text"><i class="material-icons">lock</i></h2>
+              <h5 class="center">เข้ารหัสการอัปโหลด</h5>
+              <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum id sem quis mattis. Pellentesque eu ante et diam pulvinar elementum vel vel purus. Donec at efficitur purus. Etiam dictum</p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center teal-text"><i class="material-icons">favorite</i></h2>
+              <h5 class="center">ใช้งานง่าย</h5>
+              <p class="light">Mauris at metus et est elementum pulvinar sit amet at massa. Quisque non nulla imperdiet, vulputate lorem eget, condimentum</p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center teal-text"><i class="material-icons">verified_user</i></h2>
+              <h5 class="center">ปลอดภัยเชื่อถือได้</h5>
+              <p class="light">Vivamus rhoncus, ligula vel blandit sodales, arcu sapien viverra est, in accumsan ex odio finibus augue. Aliquam vel leo neque. Morbi sed finibus felis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h5 class="header col s12 light black-text font_prompt">เงินเป็นของรัฐ แต่ชีวิตเป็นของคุณ</h5>
+          </div>
+        </div>
+      </div>
+      <div class="parallax op_30"><img src="assets/img/hackerman3.jpg" alt=""></div>
+    </div>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row font_prompt">
+          <div class="col l6 s12">
+            <h5 class="white-text">เกี่ยวกับเรา</h5>
+            <p class="grey-text text-lighten-4">Fusce iaculis fringilla tincidunt. Pellentesque velit massa, faucibus vitae laoreet sed, iaculis in urna. Integer auctor, elit in facilisis tristique, dui lacus faucibus massa, ac placerat ligula tortor a mi.</p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">ข้อมูล</h5>
+            <ul>
+              <li><a class="white-text" href="#!">เงื่อนไขการใช้บริการ</a></li>
+              <li><a class="white-text" href="#!"> นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">ติดต่อ</h5>
+            <ul>
+              <li><a class="white-text" href="#!">โทร. :</a></li>
+              <li><a class="white-text" href="#!">Fax :</a></li>
+              <li><a class="white-text" href="#!">admin@email.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">Made by Zreast @CE_KMITL</div>
+      </div>
+    </footer>
   </body>
-  <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-  <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
-  <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
-  <script type="text/javascript" src="main.js"></script>
 </html>

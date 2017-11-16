@@ -20,6 +20,9 @@ $bb_main_theme: #ffebee;
 .op_10{
   opacity: 0.1;
 }
+.op_30{
+  opacity: 0.3;
+}
 .op_50{
   opacity: 0.5;
 }
@@ -64,7 +67,7 @@ p {
 }
 
 .button-collapse {
-  color: $md-orange-300;
+  color: $md-teal-500;
 }
 
 .parallax-container {
