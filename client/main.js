@@ -3,13 +3,10 @@ angular.module('fileUpload', ['ngFileUpload'])
     var vm = this;
     vm.submit = function(){ //function to call on form submit
         if (vm.upload_form.file.$valid && vm.file) { //check if form is valid
-            //vm.encrypt(vm.file) call encrypt func before upload func
             console.log(vm.file);
             vm.upload(vm.file); //call upload function
         }
     }
-    
-    //vm.encrypt func
 
     vm.upload = function (file) {
         Upload.upload({

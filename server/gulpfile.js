@@ -1,5 +1,5 @@
-var gulp   = require( 'gulp' ),
-    server = require( 'gulp-develop-server' )
+var gulp   = require('gulp'),
+    server = require('gulp-develop-server')
 	jshint = require('gulp-jshint');
 	
 gulp.task('lint', function() {
