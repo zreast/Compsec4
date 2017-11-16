@@ -1,12 +1,19 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>DaBest Secure File Upload</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
   </head>
   <body ng-app="fileUpload">
-    <h1>Angular Node File Upload</h1>
+    <h1>Secure File Storage 1.0</h1>
     <form ng-controller="MyCtrl as up" name="up.upload_form">Single Image with validations
-      <input type="file" ngf-select="" ng-model="up.file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"/>            Image thumbnail:<img style="width:100px;" ng-show="!!up.file" ngf-thumbnail="up.file || '/thumb.jpg'"/><i ng-show="up.upload_form.file.$error.required">*required</i><br/><i ng-show="up.upload_form.file.$error.maxSize">
+      <input type="file" ngf-select="" ng-model="up.file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB">            Image thumbnail:<img style="width:100px;" ng-show="!!up.file" ngf-thumbnail="up.file || '/thumb.jpg'"><i ng-show="up.upload_form.file.$error.required">*required</i><br><i ng-show="up.upload_form.file.$error.maxSize">
         File too large
         {{up.file.size / 1000000|number:1}}MB: max 20M</i>
       <!--
