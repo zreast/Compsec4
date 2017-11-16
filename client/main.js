@@ -2,18 +2,22 @@ angular.module('fileUpload', ['ngFileUpload'])
 .controller('MyCtrl',['Upload','$window',function(Upload,$window){
     var vm = this;
     vm.submit = function(){ //function to call on form submit
-        if (vm.upload_form.file.$valid && vm.file) { //check if from is valid
+        if (vm.upload_form.file.$valid && vm.file) { //check if form is valid
+            //vm.encrypt(vm.file) call encrypt func before upload func
+            console.log(vm.file);
             vm.upload(vm.file); //call upload function
         }
     }
     
+    //vm.encrypt func
+
     vm.upload = function (file) {
         Upload.upload({
             url: 'http://localhost:3000/upload', //webAPI exposed to upload the file
             data:{file:file} //pass file as data, should be user ng-model
         }).then(function (resp) { //upload function returns a promise
             if(resp.data.error_code === 0){ //validate success
-                $window.alert('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
+                $window.alert('Success ' + resp.config.data.file.name + ' uploaded. Response: ');
             } else {
                 $window.alert('an error occured');
             }
